@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">LoginApp</string>
+    <string name="add_target">Add target</string>
+    <string name="todo">TODO</string>
+    <string name="start_date">Start date</string>
+    <string name="end_date">End date</string>
+    <string name="target">Target</string>
+</resources>
