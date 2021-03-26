@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
@@ -40,7 +41,28 @@ public class SignUp extends AppCompatActivity {
         });
 
         btndangkytc.setOnClickListener(v -> {
-            dangKy();
+            String email = edtEmail.getText().toString().trim();
+            String password = edtPassword.getText().toString().trim();
+            String user = edtUser.getText().toString().trim();
+            String phone = edtPhone.getText().toString().trim();
+
+            if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password) || TextUtils.isEmpty(user) || TextUtils.isEmpty(phone)){
+                Toast.makeText(this, "Please input information", Toast.LENGTH_SHORT).show();
+            }else if(user.length() < 4){
+                Toast.makeText(this, "Please input user than 4 characters", Toast.LENGTH_SHORT).show();
+            }
+            else if(!email.contains("@gmail.com")){
+                Toast.makeText(this, "Please input email need @gmail.com", Toast.LENGTH_SHORT).show();
+            }else if(password.length() < 5){
+                Toast.makeText(this, "Please input password than 5 characters", Toast.LENGTH_SHORT).show();
+            }
+            else if(phone.length() < 9){
+                Toast.makeText(this, "Please input phone than 9 characters", Toast.LENGTH_SHORT).show();
+            }
+            else{
+                dangKy(email, phone);
+            }
+
         });
     }
     private void init(){
@@ -51,10 +73,8 @@ public class SignUp extends AppCompatActivity {
         edtEmail = findViewById(R.id.edt_email);
         edtPhone = findViewById(R.id.edt_phone);
     }
-    private void dangKy(){
-        String email = edtEmail.getText().toString().trim();
-        String password = edtPassword.getText().toString().trim();
-        Log.d("AAA", email);
+    private void dangKy(String email, String password){
+
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override

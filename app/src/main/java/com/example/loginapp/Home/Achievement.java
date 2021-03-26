@@ -1,6 +1,8 @@
 package com.example.loginapp.Home;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,11 +10,27 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.Volley;
+import com.example.loginapp.Adapter.AchieveAdapter;
 import com.example.loginapp.DangNhap.HomeActivity;
 import com.example.loginapp.R;
+import com.example.loginapp.ThongTin.Achieve;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Achievement extends AppCompatActivity {
     ImageView imgBack;
+    AchieveAdapter achieveAdapter;
+    RecyclerView rcvListAchievement;
+    List<Achieve> mList;
+    View mView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,11 +41,19 @@ public class Achievement extends AppCompatActivity {
         int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
         decorView.setSystemUiVisibility(uiOptions);
         setContentView(R.layout.activity_achievement);
+        init();
 
-        imgBack = findViewById(R.id.img_backachive);
+//        rcvListAchievement.setAdapter(achieveAdapter);
+
         imgBack.setOnClickListener(v -> {
             Intent intent = new Intent(Achievement.this, HomeActivity.class);
             startActivity(intent);
         });
     }
+    private void init(){
+        imgBack = findViewById(R.id.img_backachive);
+//        mList = new ArrayList<>();
+//        achieveAdapter = new AchieveAdapter(mList);
+    }
+
 }

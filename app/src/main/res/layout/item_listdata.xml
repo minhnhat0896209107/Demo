@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:weightSum="5"
+    android:layout_marginTop="10dp"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/tv_targetName"
+        android:layout_weight="1"
+        android:textSize="15sp"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2 Week"/>
+
+    <TextView
+        android:id="@+id/tv_startDate"
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="21/07/2000"
+        android:textColor="@color/white"
+        android:gravity="left"
+        android:textSize="15sp"/>
+    <TextView
+        android:id="@+id/tv_endDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="21/07/2021"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:gravity="left"/>
+    <TextView
+        android:id="@+id/tv_target"
+        android:layout_weight="1"
+        android:textSize="15sp"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="30"
+        android:gravity="left"/>
+
+    <TextView
+        android:id="@+id/tv_used"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="2"
+        android:textColor="#12A118"
+        android:textSize="15sp" />
+</LinearLayout>
