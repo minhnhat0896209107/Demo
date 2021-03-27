@@ -9,9 +9,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.loginapp.R;
-import com.example.loginapp.ThongTin.Achieve;
+import com.example.loginapp.Models.Achieve;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class AchieveAdapter extends RecyclerView.Adapter<AchieveAdapter.AchieveViewHolder> {

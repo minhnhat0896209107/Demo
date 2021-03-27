@@ -1,4 +1,4 @@
-package com.example.loginapp.ThongTin;
+package com.example.loginapp.Models;
 
 public class Achieve {
     private String targetname;

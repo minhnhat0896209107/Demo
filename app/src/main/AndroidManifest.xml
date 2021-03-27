@@ -15,9 +15,9 @@
         <activity android:name=".Home.Profile" />
         <activity android:name=".Home.Achievement" />
         <activity android:name=".DangNhap.HomeActivity" />
-        <activity android:name=".DangNhap.ForgotPassword" />
-        <activity android:name=".DangNhap.SignUp" />
-        <activity android:name=".DangNhap.MainActivity">
+        <activity android:name=".Activity.SignIn.ForgotPassword" />
+        <activity android:name=".Activity.SignIn.SignUp" />
+        <activity android:name=".Activity.Login.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

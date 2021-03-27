@@ -1,24 +1,22 @@
-package com.example.loginapp.DangNhap;
+package com.example.loginapp.Activity.Login;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.loginapp.Database.DataBase;
+import com.example.loginapp.Activity.SignIn.ForgotPassword;
+import com.example.loginapp.Activity.SignIn.SignUp;
+import com.example.loginapp.DangNhap.HomeActivity;
+import com.example.loginapp.Database.FireBaseAuth.FireBaseAuth;
 import com.example.loginapp.R;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
@@ -26,7 +24,8 @@ public class MainActivity extends AppCompatActivity {
     Button btnDangNhap;
     EditText edtTk, edtMk;
     FirebaseAuth mAuth;
-    DataBase mData;
+    FireBaseAuth fireBaseAuth;
+    MainViewModel mainViewModel =  new MainViewModel(this.getApplication());
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.activity_main);
-
         init();
         mAuth = FirebaseAuth.getInstance();
         tvdangky.setOnClickListener(v -> {
@@ -48,17 +46,18 @@ public class MainActivity extends AppCompatActivity {
         });
 
         btnDangNhap.setOnClickListener(v -> {
-            String Tk = edtTk.getText().toString().trim();
-            String Mk = edtMk.getText().toString().trim();
-            if (TextUtils.isEmpty(Tk) || TextUtils.isEmpty(Mk)) {
+            String tk = edtTk.getText().toString().trim();
+            String mk = edtMk.getText().toString().trim();
+
+            if (TextUtils.isEmpty(tk) || TextUtils.isEmpty(mk)) {
                 Toast.makeText(this, "Invalid Information", Toast.LENGTH_SHORT).show();
             } else {
-                dangNhap(Tk, Mk);
+                mainViewModel.login(tk, mk, result -> {
+                    startActivity(new Intent(MainActivity.this, HomeActivity.class));
+                });
             }
 
         });
-        mData = new DataBase();
-        mData.inPutData();
 
     }
 
@@ -69,15 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
         edtTk = findViewById(R.id.edt_TK);
         edtMk = findViewById(R.id.edt_MK);
+
     }
 
-    private void dangNhap(String Tk, String Mk) {
-        mAuth.signInWithEmailAndPassword(Tk, Mk).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                Intent intent = new Intent(MainActivity.this, HomeActivity.class);
-                startActivity(intent);
-            }
-        });
-    }
 }
