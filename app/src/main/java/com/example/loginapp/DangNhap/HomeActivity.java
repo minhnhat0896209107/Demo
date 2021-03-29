@@ -8,7 +8,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
-import com.example.loginapp.Activity.Login.MainActivity;
+import com.example.loginapp.MainAc.Login.MainActivity;
 import com.example.loginapp.Home.Achievement;
 import com.example.loginapp.Home.Chat;
 import com.example.loginapp.Home.Profile;

@@ -1,13 +1,8 @@
 package com.example.loginapp.Database.FireBaseAuth;
 
-import android.app.Activity;
 import android.app.Application;
-import android.content.Context;
-import android.content.Intent;
 import android.widget.Toast;
 
-import com.example.loginapp.Activity.Login.MainActivity;
-import com.example.loginapp.DangNhap.HomeActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.concurrent.Executor;
@@ -15,7 +10,6 @@ import java.util.concurrent.Executor;
 public class FireBaseAuth {
     FirebaseAuth auth;
     private Application context;
-
     public FireBaseAuth(Application context) {
         auth =  FirebaseAuth.getInstance();
         this.context = context;
@@ -35,4 +29,5 @@ public class FireBaseAuth {
     public interface CallBack {
         void success(boolean result);
     }
+
 }

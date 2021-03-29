@@ -1,26 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.loginapp">
-
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <application
-
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LoginApp">
-        <activity android:name=".Home.Target"></activity>
+        <activity android:name=".Home.Target"/>
         <activity android:name=".Home.Chat" />
         <activity android:name=".Home.Profile" />
         <activity android:name=".Home.Achievement" />
         <activity android:name=".DangNhap.HomeActivity" />
-        <activity android:name=".Activity.SignIn.ForgotPassword" />
-        <activity android:name=".Activity.SignIn.SignUp" />
-        <activity android:name=".Activity.Login.MainActivity">
+        <activity android:name=".MainAc.SignIn.ForgotPassword" />
+        <activity android:name=".MainAc.SignIn.SignUp" />
+        <activity android:name=".MainAc.Login.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

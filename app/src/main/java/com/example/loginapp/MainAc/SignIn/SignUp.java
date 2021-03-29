@@ -1,4 +1,4 @@
-package com.example.loginapp.Activity.SignIn;
+package com.example.loginapp.MainAc.SignIn;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,7 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.loginapp.Activity.Login.MainActivity;
+import com.example.loginapp.MainAc.Login.MainActivity;
 import com.example.loginapp.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;

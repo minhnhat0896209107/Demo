@@ -1,4 +1,4 @@
-package com.example.loginapp.Activity.SignIn;
+package com.example.loginapp.MainAc.SignIn;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 
-import com.example.loginapp.Activity.Login.MainActivity;
+import com.example.loginapp.MainAc.Login.MainActivity;
 import com.example.loginapp.R;
 
 public class ForgotPassword extends AppCompatActivity {
