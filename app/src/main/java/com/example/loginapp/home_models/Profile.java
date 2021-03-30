@@ -1,4 +1,4 @@
-package com.example.loginapp.MainAc.SignIn;
+package com.example.loginapp.home_models;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,13 +6,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
-import android.widget.Button;
+import android.widget.ImageView;
 
-import com.example.loginapp.MainAc.Login.MainActivity;
+import com.example.loginapp.activities.HomeActivity;
 import com.example.loginapp.R;
 
-public class ForgotPassword extends AppCompatActivity {
-    Button btnback;
+public class Profile extends AppCompatActivity {
+    ImageView imgBack;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,13 +22,11 @@ public class ForgotPassword extends AppCompatActivity {
         // Hide the status bar.
         int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
         decorView.setSystemUiVisibility(uiOptions);
-        setContentView(R.layout.activity_forgot_password);
+        setContentView(R.layout.activity_profile);
 
-        btnback = findViewById(R.id.btn_back);
-
-        btnback.setOnClickListener(v -> {
-            Intent i = new Intent(ForgotPassword.this, MainActivity.class);
-            startActivity(i);
+        imgBack = findViewById(R.id.img_backprofile);
+        imgBack.setOnClickListener(v -> {
+            finish();
         });
     }
 }

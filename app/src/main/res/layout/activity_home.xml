@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:weightSum="15"
     android:background="@drawable/bacground_home"
-    tools:context=".DangNhap.HomeActivity">
+    tools:context=".activities.HomeActivity">
     <ImageView
             android:layout_weight="2"
             android:layout_marginTop="10dp"

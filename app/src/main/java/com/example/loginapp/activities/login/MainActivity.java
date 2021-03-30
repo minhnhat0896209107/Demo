@@ -1,4 +1,4 @@
-package com.example.loginapp.MainAc.Login;
+package com.example.loginapp.activities.login;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,10 +9,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
-import com.example.loginapp.MainAc.SignIn.ForgotPassword;
-import com.example.loginapp.MainAc.SignIn.SignUp;
-import com.example.loginapp.DangNhap.HomeActivity;
+import androidx.lifecycle.ViewModelProvider;
+
 import com.example.loginapp.R;
+import com.example.loginapp.activities.ForgotPassword;
+import com.example.loginapp.activities.HomeActivity;
+import com.example.loginapp.activities.SignUp;
 import com.google.firebase.auth.FirebaseAuth;
 
 
@@ -21,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     Button btnDangNhap;
     EditText edtTk, edtMk;
     FirebaseAuth mAuth;
-    MainViewModel mainViewModel =  new MainViewModel(getApplication());
+    MainViewModel mainViewModel = new MainViewModel(getApplication());
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
         init();
-
 
         mAuth = FirebaseAuth.getInstance();
         tvdangky.setOnClickListener(v -> {
@@ -49,10 +50,15 @@ public class MainActivity extends AppCompatActivity {
             if (TextUtils.isEmpty(tk) || TextUtils.isEmpty(mk)) {
                 Toast.makeText(this, "Invalid Information", Toast.LENGTH_SHORT).show();
             } else {
-                mainViewModel.login(tk, mk, result -> {
-                    Toast.makeText(this, "Login Success", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(MainActivity.this, HomeActivity.class));
-                });
+                try {
+                    mainViewModel.login(tk, mk, result -> {
+                        Toast.makeText(this, "Login Success", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(MainActivity.this, HomeActivity.class));
+                    });
+                }catch (Exception e){
+                    Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
 

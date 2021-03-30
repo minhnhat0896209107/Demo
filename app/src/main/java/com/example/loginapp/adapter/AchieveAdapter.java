@@ -1,4 +1,4 @@
-package com.example.loginapp.Adapter;
+package com.example.loginapp.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.loginapp.R;
-import com.example.loginapp.Models.Achieve;
+import com.example.loginapp.models.Achieve;
 
 import java.util.List;
 

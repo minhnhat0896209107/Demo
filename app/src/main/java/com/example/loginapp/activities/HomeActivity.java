@@ -1,4 +1,4 @@
-package com.example.loginapp.DangNhap;
+package com.example.loginapp.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,12 +8,12 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
-import com.example.loginapp.MainAc.Login.MainActivity;
-import com.example.loginapp.Home.Achievement;
-import com.example.loginapp.Home.Chat;
-import com.example.loginapp.Home.Profile;
-import com.example.loginapp.Home.Target;
+import com.example.loginapp.home_models.Achievement;
+import com.example.loginapp.home_models.Chat;
+import com.example.loginapp.home_models.Profile;
+import com.example.loginapp.home_models.Target;
 import com.example.loginapp.R;
+import com.example.loginapp.activities.login.MainActivity;
 
 public class HomeActivity extends AppCompatActivity {
     Button btnbacktoSingin;

@@ -13,14 +13,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LoginApp">
-        <activity android:name=".Home.Target"/>
-        <activity android:name=".Home.Chat" />
-        <activity android:name=".Home.Profile" />
-        <activity android:name=".Home.Achievement" />
-        <activity android:name=".DangNhap.HomeActivity" />
-        <activity android:name=".MainAc.SignIn.ForgotPassword" />
-        <activity android:name=".MainAc.SignIn.SignUp" />
-        <activity android:name=".MainAc.Login.MainActivity">
+        <activity android:name=".home_models.Target"/>
+        <activity android:name=".home_models.Chat" />
+        <activity android:name=".home_models.Profile" />
+        <activity android:name=".home_models.Achievement" />
+        <activity android:name=".activities.HomeActivity" />
+        <activity android:name=".activities.ForgotPassword" />
+        <activity android:name=".activities.SignUp" />
+        <activity android:name=".activities.login.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

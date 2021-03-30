@@ -1,4 +1,4 @@
-package com.example.loginapp.Home;
+package com.example.loginapp.home_models;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -8,18 +8,15 @@ import android.content.Intent;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
-import com.example.loginapp.Adapter.MessageAdapter;
-import com.example.loginapp.DangNhap.HomeActivity;
+import com.example.loginapp.adapter.MessageAdapter;
+import com.example.loginapp.activities.HomeActivity;
 import com.example.loginapp.DuLieu.Message;
 import com.example.loginapp.R;
 
@@ -88,8 +85,7 @@ public class Chat extends AppCompatActivity {
     }
     public void BackHome(){
         imgBack.setOnClickListener(v -> {
-            Intent intent = new Intent(Chat.this, HomeActivity.class);
-            startActivity(intent);
+            finish();
         });
     }
     private void checkKeyBoard(){

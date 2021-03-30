@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:padding="5dp"
     android:background="@drawable/bacground"
-    tools:context=".MainAc.Login.MainActivity">
+    tools:context=".activities.login.MainActivity">
 
     <LinearLayout
         android:orientation="horizontal"

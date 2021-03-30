@@ -1,4 +1,4 @@
-package com.example.loginapp.Home;
+package com.example.loginapp.home_models;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,7 +10,7 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.Spinner;
 
-import com.example.loginapp.DangNhap.HomeActivity;
+import com.example.loginapp.activities.HomeActivity;
 import com.example.loginapp.DuLieu.Catelogy;
 import com.example.loginapp.DuLieu.CateloryAdapter;
 import com.example.loginapp.R;
@@ -36,8 +36,7 @@ public class Target extends AppCompatActivity{
         init();
 
         imgBack.setOnClickListener(v -> {
-            Intent intent = new Intent(Target.this, HomeActivity.class);
-            startActivity(intent);
+            finish();
         });
 
         spinnertarget.setAdapter(target);
