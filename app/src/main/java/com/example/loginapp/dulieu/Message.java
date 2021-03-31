@@ -1,4 +1,4 @@
-package com.example.loginapp.DuLieu;
+package com.example.loginapp.dulieu;
 
 public class Message {
     private String message;

@@ -29,6 +29,7 @@ public class ForgotPassword extends AppCompatActivity {
         btnback.setOnClickListener(v -> {
             Intent i = new Intent(ForgotPassword.this, MainActivity.class);
             startActivity(i);
+            finish();
         });
     }
 }

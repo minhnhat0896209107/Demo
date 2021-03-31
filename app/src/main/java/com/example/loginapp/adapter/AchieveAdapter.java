@@ -1,5 +1,6 @@
 package com.example.loginapp.adapter;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,9 +16,10 @@ import java.util.List;
 
 public class AchieveAdapter extends RecyclerView.Adapter<AchieveAdapter.AchieveViewHolder> {
     List<Achieve> mList;
-
-    public AchieveAdapter(List<Achieve> mList) {
+    Context mContext;
+    public AchieveAdapter(List<Achieve> mList, Context context) {
         this.mList = mList;
+        this.mContext = context;
         notifyDataSetChanged();
     }
 
@@ -44,7 +46,7 @@ public class AchieveAdapter extends RecyclerView.Adapter<AchieveAdapter.AchieveV
     @Override
     public int getItemCount() {
         if (mList != null){
-            mList.size();
+            return mList.size();
         }
         return 0;
     }

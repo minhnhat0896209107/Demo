@@ -2,7 +2,6 @@ package com.example.loginapp.home_models;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -10,9 +9,8 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.Spinner;
 
-import com.example.loginapp.activities.HomeActivity;
-import com.example.loginapp.DuLieu.Catelogy;
-import com.example.loginapp.DuLieu.CateloryAdapter;
+import com.example.loginapp.dulieu.Catelogy;
+import com.example.loginapp.dulieu.CateloryAdapter;
 import com.example.loginapp.R;
 
 import java.util.ArrayList;

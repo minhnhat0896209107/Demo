@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -16,8 +15,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 import com.example.loginapp.adapter.MessageAdapter;
-import com.example.loginapp.activities.HomeActivity;
-import com.example.loginapp.DuLieu.Message;
+import com.example.loginapp.dulieu.Message;
 import com.example.loginapp.R;
 
 import java.util.ArrayList;

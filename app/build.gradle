@@ -54,5 +54,4 @@ dependencies {
     implementation 'com.google.android.gms:play-services-maps:15.0.0'
     implementation "androidx.lifecycle:lifecycle-viewmodel:2.2.0"
     implementation "androidx.lifecycle:lifecycle-livedata:2.2.0"
-    implementation "androidx.recyclerview:recyclerview:1.1.0"
 }

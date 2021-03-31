@@ -1,13 +1,18 @@
 package com.example.loginapp.models;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class Achieve {
     private String targetname;
     private String startdate;
     private String enddate;
-    private int target;
-    private int used;
+    private String target;
+    private String used;
 
-    public Achieve(String targetname, String startdate, String enddate, int target, int used) {
+    public Achieve() {
+    }
+
+    public Achieve(String targetname, String startdate, String enddate, String target, String used) {
         this.targetname = targetname;
         this.startdate = startdate;
         this.enddate = enddate;
@@ -39,19 +44,19 @@ public class Achieve {
         this.enddate = enddate;
     }
 
-    public int getTarget() {
+    public String getTarget() {
         return target;
     }
 
-    public void setTarget(int target) {
+    public void setTarget(String target) {
         this.target = target;
     }
 
-    public int getUsed() {
+    public String getUsed() {
         return used;
     }
 
-    public void setUsed(int used) {
+    public void setUsed(String used) {
         this.used = used;
     }
 }

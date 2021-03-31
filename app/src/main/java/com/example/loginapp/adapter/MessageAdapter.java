@@ -8,7 +8,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.loginapp.DuLieu.Message;
+import com.example.loginapp.dulieu.Message;
 import com.example.loginapp.R;
 
 import java.util.List;

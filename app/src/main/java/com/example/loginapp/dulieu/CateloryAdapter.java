@@ -1,4 +1,4 @@
-package com.example.loginapp.DuLieu;
+package com.example.loginapp.dulieu;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
