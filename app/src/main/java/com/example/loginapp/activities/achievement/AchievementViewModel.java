@@ -1,4 +1,4 @@
-package com.example.loginapp.viewmodels;
+package com.example.loginapp.activities.achievement;
 
 import android.app.Application;
 import android.content.Context;

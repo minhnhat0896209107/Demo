@@ -1,4 +1,4 @@
-package com.example.loginapp.dulieu;
+package com.example.loginapp.models;
 
 public class Catelogy {
     String name;

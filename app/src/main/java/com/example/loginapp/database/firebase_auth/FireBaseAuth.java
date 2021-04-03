@@ -1,13 +1,12 @@
 package com.example.loginapp.database.firebase_auth;
 
 import android.app.Application;
-import android.content.Context;
-import android.content.Intent;
-import android.widget.Toast;
 
-import androidx.databinding.Bindable;
+import androidx.annotation.NonNull;
 
-import com.example.loginapp.activities.HomeActivity;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.concurrent.Executor;
@@ -15,7 +14,6 @@ import java.util.concurrent.Executor;
 public class FireBaseAuth {
     FirebaseAuth auth;
     private Application application;
-    Context mContext;
 
     public FireBaseAuth(Application application) {
         auth = FirebaseAuth.getInstance();
@@ -23,14 +21,26 @@ public class FireBaseAuth {
     }
 
     public void dangNhap(String tk, String mk, CallBack callBack) {
-        auth.signInWithEmailAndPassword(tk, mk).addOnCompleteListener((Executor) application, task -> {
-            if (task.isSuccessful()) {
-                callBack.success(true);
-            } else {
-                callBack.success(false);
-                Toast.makeText(application, "Loi Dang Nhap", Toast.LENGTH_SHORT).show();
-            }
-        });
+            auth.signInWithEmailAndPassword(tk, mk).addOnCompleteListener(task -> {
+                if (task.isSuccessful()) {
+                    callBack.success(true);
+
+                }
+                else {
+                    callBack.success(false);
+                }
+            });
+    }
+    public void dangKy(String email, String password, CallBack callBack){
+        auth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()){
+                        callBack.success(true);
+                    }
+                    if (task.isCanceled()){
+                        callBack.success(false);
+                    }
+                });
     }
 
     public interface CallBack {

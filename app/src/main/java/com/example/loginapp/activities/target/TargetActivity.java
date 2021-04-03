@@ -1,7 +1,8 @@
-package com.example.loginapp.home_models;
+package com.example.loginapp.activities.target;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -9,14 +10,15 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.Spinner;
 
-import com.example.loginapp.dulieu.Catelogy;
-import com.example.loginapp.dulieu.CateloryAdapter;
+import com.example.loginapp.activities.home.HomeActivity;
+import com.example.loginapp.models.Catelogy;
+import com.example.loginapp.adapter.CateloryAdapter;
 import com.example.loginapp.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Target extends AppCompatActivity{
+public class TargetActivity extends AppCompatActivity{
     ImageView imgBack;
     Spinner startdate, enddate, countcigarette;
     Spinner spinnertarget;
@@ -34,7 +36,7 @@ public class Target extends AppCompatActivity{
         init();
 
         imgBack.setOnClickListener(v -> {
-            finish();
+            startActivity(new Intent(TargetActivity.this, HomeActivity.class));
         });
 
         spinnertarget.setAdapter(target);
