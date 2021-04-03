@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable
-            name="MainViewModel"
-            type="com.example.loginapp.viewmodels.MainViewModel" />
+            name="LoginViewModel"
+            type="com.example.loginapp.activities.login.LoginViewModel" />
     </data>
 
     <LinearLayout

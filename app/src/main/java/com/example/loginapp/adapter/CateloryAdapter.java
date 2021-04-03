@@ -1,4 +1,4 @@
-package com.example.loginapp.dulieu;
+package com.example.loginapp.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.loginapp.R;
+import com.example.loginapp.models.Catelogy;
 
 import java.util.List;
 

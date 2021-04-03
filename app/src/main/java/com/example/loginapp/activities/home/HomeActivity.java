@@ -1,20 +1,19 @@
-package com.example.loginapp.activities;
+package com.example.loginapp.activities.home;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
-import com.example.loginapp.home_models.Achievement;
-import com.example.loginapp.home_models.Chat;
-import com.example.loginapp.home_models.Profile;
-import com.example.loginapp.home_models.Target;
+import com.example.loginapp.activities.achievement.AchievementActivity;
+import com.example.loginapp.activities.chat.ChatActivity;
+import com.example.loginapp.activities.proflie.ProfileActivity;
+import com.example.loginapp.activities.target.TargetActivity;
 import com.example.loginapp.R;
-import com.example.loginapp.activities.login.MainActivity;
+import com.example.loginapp.activities.login.LoginActivity;
 
 public class HomeActivity extends AppCompatActivity {
     Button btnbacktoSingin;
@@ -24,11 +23,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        View decorView = getWindow().getDecorView();
 
-        int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
-                | View.SYSTEM_UI_FLAG_FULLSCREEN;
-        decorView.setSystemUiVisibility(uiOptions);
         setContentView(R.layout.activity_home);
 
         btnbacktoSingin = findViewById(R.id.btn_backtoSignin);
@@ -38,27 +33,27 @@ public class HomeActivity extends AppCompatActivity {
         achieve = findViewById(R.id.achieve);
 
         btnbacktoSingin.setOnClickListener(v -> {
-            Intent intent = new Intent(HomeActivity.this, MainActivity.class);
+            Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
             startActivity(intent);
             finish();
         });
         target.setOnClickListener(v -> {
-            Intent intent = new Intent(HomeActivity.this, Target.class);
+            Intent intent = new Intent(HomeActivity.this, TargetActivity.class);
             startActivity(intent);
             finish();
         });
         chat.setOnClickListener(v -> {
-            Intent intent = new Intent(HomeActivity.this, Chat.class);
+            Intent intent = new Intent(HomeActivity.this, ChatActivity.class);
             startActivity(intent);
             finish();
         });
         profile.setOnClickListener(v -> {
-            Intent intent = new Intent(HomeActivity.this, Profile.class);
+            Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
             startActivity(intent);
             finish();
         });
         achieve.setOnClickListener(v -> {
-            Intent intent = new Intent(HomeActivity.this, Achievement.class);
+            Intent intent = new Intent(HomeActivity.this, AchievementActivity.class);
             startActivity(intent);
             finish();
         });

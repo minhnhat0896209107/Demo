@@ -36,8 +36,7 @@
         android:layout_alignParentBottom="true"
         android:id="@+id/layout_bottom"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp">
+        android:layout_height="wrap_content">
         <EditText
             android:id="@+id/edt_Message"
             android:layout_width="match_parent"

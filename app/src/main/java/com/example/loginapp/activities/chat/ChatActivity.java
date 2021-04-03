@@ -1,9 +1,10 @@
-package com.example.loginapp.home_models;
+package com.example.loginapp.activities.chat;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -14,14 +15,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import com.example.loginapp.activities.home.HomeActivity;
 import com.example.loginapp.adapter.MessageAdapter;
-import com.example.loginapp.dulieu.Message;
+import com.example.loginapp.models.Message;
 import com.example.loginapp.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Chat extends AppCompatActivity {
+public class ChatActivity extends AppCompatActivity {
     ImageView imgBack;
     RecyclerView rcvMessage;
     MessageAdapter messageAdapter;
@@ -35,7 +37,7 @@ public class Chat extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_chat);
 
-        Init();
+        init();
         BackHome();
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         rcvMessage.setLayoutManager(linearLayoutManager);
@@ -72,7 +74,7 @@ public class Chat extends AppCompatActivity {
         edtmessage.setText("");
     }
 
-    public void Init(){
+    public void init(){
         imgBack = findViewById(R.id.img_backchat);
         edtmessage = findViewById(R.id.edt_Message);
         btnSend = findViewById(R.id.btn_send);
@@ -83,7 +85,7 @@ public class Chat extends AppCompatActivity {
     }
     public void BackHome(){
         imgBack.setOnClickListener(v -> {
-            finish();
+            startActivity(new Intent(ChatActivity.this, HomeActivity.class));
         });
     }
     private void checkKeyBoard(){
